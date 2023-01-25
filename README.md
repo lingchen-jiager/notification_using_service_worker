@@ -1,2 +1,1 @@
-# notification_using_service_worker
-使用serviceworker实现网页弹窗通知，支持windows谷歌浏览器和安卓谷歌浏览器。
+# flask-sse
