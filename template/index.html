@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>APP</title>
+</head>
+<body>
+  <h1>APP</h1>
+  <div id="counter"></div>
+  
+  <script>
+var bo = {
+
+  "body": "This is a test",
+
+}
+
+function toast(vara){
+navigator.serviceWorker.register('./static/sw.js')
+  .then((registration) => {
+    Notification.requestPermission()
+      .then(status => {
+        if (status === 'granted') {
+          registration.showNotification('title',vara);
+        }
+      })
+  })
+}
+timer = setInterval("toast(bo)",10000); //经测试可成功在后台运行。
+
+  </script>
+
+</body>
+</html>
